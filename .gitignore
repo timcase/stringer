@@ -18,7 +18,6 @@ log
 .yardoc
 _yardoc
 doc/
-bin/
 
 .DS_Store
 .localeapp
