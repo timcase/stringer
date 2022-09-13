@@ -11,6 +11,6 @@ test:
   pool: 5
 
 production:
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV["STRINGER_DATABASE_URL"] %>
   encoding: unicode
   pool: 5

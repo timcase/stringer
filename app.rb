@@ -34,7 +34,7 @@ class Stringer < Sinatra::Base
     set :root, File.dirname(__FILE__)
 
     enable :sessions
-    set :session_secret, ENV["SECRET_TOKEN"] || SecureRandom.hex(32)
+    set :session_secret, ENV["STRINGER_SECRET_TOKEN"] || SecureRandom.hex(32)
     enable :logging
     enable :method_override
 
