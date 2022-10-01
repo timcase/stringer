@@ -5,7 +5,7 @@ require_relative "../repositories/user_repository"
 module Sinatra
   module AuthenticationHelpers
     def authenticated?
-      session[:user_id]
+      session_user_id
     end
 
     def needs_authentication?(path)
@@ -17,7 +17,11 @@ module Sinatra
     end
 
     def current_user
-      UserRepository.fetch(session[:user_id])
+      UserRepository.fetch(session_user_id)
+    end
+
+    def session_user_id
+      ENV["STRINGER_USER_ID"] || session[:user_id]
     end
   end
 end
